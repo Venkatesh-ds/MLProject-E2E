@@ -1,3 +1,11 @@
+import os
+import sys
+
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.append(project_root)
+
+print("sys.path.append(project_root): ", sys.path.append(project_root))
+
 from src.mlProject.config.configuration import ConfigurationManager
 from src.mlProject.components.model_evaluation import ModelEvaluation
 from src.mlProject import logger
