@@ -25,6 +25,21 @@ jobs:
       - name: Run unit tests
         run: echo "Running unit tests"
 
+  test:
+    name: Continuos Test
+    runs-on: ubuntu-latest
+    needs: integration
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+
+      - name: Run regression tests
+        id: test
+        run: python scripts/run_regression_tests.py
+
   build-and-push-ecr-image:
     name: Continuous Delivery
     needs: integration
