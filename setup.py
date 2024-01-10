@@ -11,7 +11,6 @@ AUTHOR_USER_NAME = "VenkateshN"
 SRC_REPO = "mlProject"
 AUTHOR_EMAIL = "venkateshdsprof@gmail.com"
 
-
 setuptools.setup(
     name=SRC_REPO,
     version=__version__,
