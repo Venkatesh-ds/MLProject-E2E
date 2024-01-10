@@ -38,17 +38,18 @@ jobs:
 
       - name: Run regression tests
         id: test
-        run: python scripts/run_regression_tests.py
+        run: python src/mlProject/pipeline/stage_05_model_evaluation.py
 
   build-and-push-ecr-image:
     name: Continuous Delivery
-    needs: integration
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
 
       - name: Install Utilities
+        if: "steps.test.outputs.test > 0.5" 
         run: |
           sudo apt-get update
           sudo apt-get install -y jq unzip
