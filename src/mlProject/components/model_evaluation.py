@@ -5,7 +5,7 @@ from mlProject.utils.common import save_json
 from urllib.parse import urlparse
 import numpy as np
 import joblib
-from mlProject.entity.config_entity import ModelEvaluationConfig
+from src.mlProject.entity.config_entity import ModelEvaluationConfig
 from pathlib import Path
 
 
