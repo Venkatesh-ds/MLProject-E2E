@@ -38,7 +38,7 @@ jobs:
 
       - name: Run regression tests
         id: test
-        run: python src/mlProject/pipeline/stage_05_model_evaluation.py
+        run: python stage_05_model_evaluation.py
 
   build-and-push-ecr-image:
     name: Continuous Delivery
